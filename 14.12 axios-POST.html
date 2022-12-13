@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"
+        integrity="sha512-zJYu9ICC+mWF3+dJ4QC34N9RA0OVS1XtPbnf6oXlvGrLGNB8egsEzu/5wgG90I61hOOKvcywoLzwNmPqGAdATA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+       
+function newaxiosPost (){
+    let newcontact = {
+                contactName: 'sdjhfsd',
+                contactTitle: 'fshdf',
+                street: 'sjfd',
+                city: 'sdkl',
+                postalCode: '679386',
+                country: 'trjqprq',
+                phone:'573098574'
+                
+            } 
+            axios.post ('https://northwind.vercel.app/api/customers', newcontact)
+            .then(res=>{
+                console.log('CreatedPost', res);
+            })
+
+        
+           
+            }
+    </script>
+
+</body>
+
+</html>
