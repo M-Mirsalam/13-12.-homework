@@ -1,75 +1,61 @@
 import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, TextInput, View, Button } from 'react-native';
 import { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 
-const App = () => {
-  const [number1, setnumber1] = useState("")
-  const [number2, setnumber2] = useState("")
-  const [resault, setresault] = useState(0)
-  
+let firstweight = 100;
+let firstheight = 100;
 
-  const toplama = () => {
-    let cem = ((+number1) + (+number2))
-    setresault(cem)
-  }
-  const cixma = () => {
-    let ferq = ((+number1) - (+number2))
-    setresault(ferq)
-  }
-  const vurma = () => {
-    let hasil = ((+number1) * (+number2))
-    setresault(hasil)
-  }
-  const bolme = () => {
-    let qismet = ((+number1) / (+number2))
-    setresault(qismet)
+export default function App() {
+  const [weight, setweight] = useState(firstweight)
+  const [height, setheight] = useState(firstheight)
+
+ 
+
+  const change = () => {
+    setweight(firstweight)
+    setheight(firstheight)
   }
   return (
     <View>
       <TextInput
-        style={styles.input}
-        onChangeText={setnumber1}
-        value={number1}
+        onChangeText={setweight}
+        style={styles.input}>
+      </TextInput>
 
-      />
       <TextInput
-        style={styles.input}
-        onChangeText={setnumber2}
-        value={number2}
-      />
+        onchanceText={setheight}
+        style={styles.input}>
+      </TextInput>
 
-      < View style={styles.container}>
-       
-        <Button onPress={toplama} title='+'></Button>
-        <Button onPress={cixma} title='-'></Button>
-        <Button onPress={vurma} title='x'></Button>
-        <Button onPress={bolme} title=':'></Button>
-        <Text style={styles.text}> Resault: {resault} </Text>
-       
-      </View>
+      <Button
+        onPress={change}
+        style={styles.button}>
+      </Button>
+
+      <View style={styles.container}></View>
     </View>
-
   );
-
 }
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: 'row',
-    padding: 16,
+    height: firstheight,
+    weight: firstweight,
+    backgroundColor: 'green',
+    alignItems: 'center'
   },
   input: {
-    height: 40,
-    weight: 30,
-    margin: 12,
     borderWidth: 1,
-    padding: 10,
+    placeholder: "Enter ",
+    borderColor: 'black',
+    height: 40,
+    weight: 70,
   },
-    text:{
-      fontSize: 25,
-      fontWeight: 'bold',
-      color: 'red'
-    }
-});
+  button: {
+    title: 'Chance',
+    titleColor:'black',
+    height: 50,
+    weight: 70,
 
-export default App
+  }
+});
